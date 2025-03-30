@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Task</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header >
+    <div class="header">
+        <h1>Cloud Task Management</h1>
+    </div>
+</header>
+
+<div class="create">
+<div class="body">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li th:if="${session.id != null}"><a href="/task">Assigned Task</a></li>
+        <li th:if="${session.id == null}"><a href="/register">Register</a></li>
+        <li th:if="${session.id != null && session.role == 'ADMIN'}"><a href="/create">Create New Task</a></li>
+        <li th:if="${session.id != null && session.role == 'ADMIN'}"><a href="/admin">Users</a></li>
+        <li th:if="${session.role =='ADMIN'}"><a href="/tasks/assign">Assign task to User</a></li>
+
+        <li th:if="${session.id == null}"><a href="/login">Login</a></li>
+        <li th:if="${session.id != null}"><a href="/logout">Logout</a></li>
+    </ul>
+</div>
+<div class="body2">
+<h1>Create New Task</h1>
+
+<!-- Task Creation Form -->
+<form action="/createTask" method="post">
+    <label for="title">Task Name:</label>
+    <input type="text" id="title" name="title" required><br><br>
+
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" required></textarea><br><br>
+
+    <label for="dueDate">Due Date:</label>
+    <input type="date" id="dueDate" name="dueDate" required><br><br>
+
+    <label for="priority">Priority:</label>
+    <select id="priority" name="priority" required>
+        <option value="1">Low</option>
+        <option value="2">Medium</option>
+        <option value="3">High</option>
+    </select><br><br>
+    <label for="assignedToUser">Assigned to User</label>
+    <select id="assignedToUser" name="assignedToUser">
+        <option th:each="user : ${users}"
+                th:if="${user.role.contains('USER')}"
+                th:value="${user.id}" th:text="${user.username}"></option>
+    </select>
+
+
+    <input type="hidden" name="userId" th:value="${id}" />
+    <button type="submit">Create Task</button>
+</form>
+
+<br>
+<a href="/task">Back to Task List</a>
+</div>
+</div>
+</body>
+</html>

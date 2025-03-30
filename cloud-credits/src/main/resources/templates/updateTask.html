@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Task</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header>
+    <div class="header">
+        <h1>Cloud Task Management</h1>
+    </div>
+</header>
+
+<div class="create">
+    <div class="body">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li th:if="${session.id == null}"><a href="/register">Register</a></li>
+            <li th:if="${session.id != null}"><a href="/task">Assigned Task</a></li>
+            <li th:if="${session.id != null && session.role == 'ADMIN'}"><a href="/create">Create New Task</a></li>
+            <li th:if="${session.id != null && session.role == 'ADMIN'}"><a href="/admin">Users</a></li>
+            <li th:if="${session.role =='ADMIN'}"><a href="/tasks/assign">Assign task to User</a></li>
+            <li th:if="${session.id == null}"><a href="/login">Login</a></li>
+            <li th:if="${session.id != null }"><a href="/logout">Logout</a></li>
+        </ul>
+    </div>
+    <div class="body2">
+        <h1>Update the task</h1>
+
+        <!-- Task Creation Form -->
+        <form th:action="@{/update-task/{id}(id=${tasks.id})}" method="post" >
+            <label for="title">Task Name:</label>
+            <input type="text" id="title" name="title" th:value="${tasks.title}"  required><br><br>
+
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" th:text="${tasks.description}" required></textarea><br><br>
+
+            <label th:if="${session.role == 'ADMIN'}" for="dueDate">Due Date:</label>
+            <input type="date" id="dueDate" name="dueDate" th:value="${tasks.dueDate}" th:if="${session.role == 'ADMIN'}" required><br><br>
+
+            <label th:if="${session.role == 'ADMIN'}" for="priority">Priority:</label>
+            <select th:if="${session.role == 'ADMIN'}" id="priority" name="priority" th:value="${tasks.priority}" required>
+                <option value="1">Low</option>
+                <option value="2">Medium</option>
+                <option value="3">High</option>
+            </select><br><br>
+
+            <label th:if="${session.role == 'USER'}" for="userResponse">Response to admin</label>
+
+                <textarea th:if="${session.role == 'USER'}" id="userResponse" name="userResponse"> Feedback of your project </textarea>
+
+            <label th:if="${session.role == 'USER'}" for="responseAdmin">Response from Admin</label>
+                <div th:if="${session.role == 'USER'}" id="responseAdmin" th:text="${tasks.adminResponse}">No response</div>
+
+            <label th:if="${session.role == 'ADMIN'}" for="adminResponse">Response to user</label>
+
+                <textarea th:if="${session.role == 'ADMIN'}" id="adminResponse" name="adminResponse"> Response to user </textarea>
+
+            <label th:if="${session.role == 'ADMIN'}" for="responseUser">Response from user</label>
+                <div th:if="${session.role == 'ADMIN'}"  id="responseUser" th:text="${tasks.userResponse}">No response</div>
+
+
+            <button type="submit">Update Task</button>
+        </form>
+
+        <br>
+        <a href="/task">Back to Task List</a>
+    </div>
+</div>
+</body>
+</html>

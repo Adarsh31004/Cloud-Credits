@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header>
+    <div class="header">
+        <h1>Cloud Task Management</h1>
+    </div>
+</header>
+
+<div class="body">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li th:if="${session.id == null}"><a href="/register">Register</a></li>
+        <li th:if="${session.id != null}"><a href="/task">Assigned Task</a></li>
+
+        <li th:if="${session.id != null}"><a href="/create">Create New Task</a></li>
+        <li th:if="${session.id != null && session.role == 'ADMIN'}"><a href="/admin">Users</a></li>
+        <li th:if="${session.role =='ADMIN'}"><a href="/tasks/assign">Assign task to User</a></li>
+        <li th:if="${session.id == null}"><a href="/login">Login</a></li>
+        <li th:if="${session.id != null}"><a href="/logout">Logout</a></li>
+    </ul>
+</div>
+
+<div class="admin">
+    <label for="users">Users</label>
+
+
+    <div id="users" th:each="user : ${users}">
+        <input type="hidden" th:value="${user.id}" name="id">
+        <a th:href="@{/profile/{id}(id=${user.id})}" th:text="${user.username}"></a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

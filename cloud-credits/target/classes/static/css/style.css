@@ -1,0 +1,521 @@
+body{
+margin:0;
+padding:0;
+background-color:#660066;
+}
+
+/* Basic styling for the header */
+header {
+
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background-color: #1a001a;  /* Green background color */
+    color: white;  /* White text color */
+    padding: 15px;  /* Space around the header text */
+    text-align: center;  /* Center-align the text */
+}
+
+
+
+.header h1 {
+    margin: 0;  /* Remove default margin */
+    font-size: 30px;  /* Set the font size */
+    font-family: 'Arial', sans-serif;  /* Set the font */
+    letter-spacing: 2px;  /* Increase space between letters for a sleek look */
+    font-weight: bold;  /* Make the title bold */
+}
+
+
+
+/* Basic styles for the navigation menu */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.body{
+margin:80px 10px;}
+
+.body ul {
+    list-style-type: none;  /* Removes bullet points */
+    padding: 0;
+    margin: 0;
+    background-color: #330033;
+    width: 200px;  /* Set the width for the sidebar */
+    position: fixed;  /* Keep the menu fixed to the left */
+    height: 600px;  /* Make the menu fill the height of the screen */
+}
+
+.body ul li {
+    display: block;  /* Make each item a block element to stack vertically */
+    margin-bottom: 10px;  /* Add space between items */
+}
+
+.body ul li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.body ul li a:hover {
+    background-color: #ffccff;  /* Change background on hover */
+    color:#330033;
+
+}
+
+
+.body2{
+
+margin-left:400px;
+
+}
+.body2 div{
+color:white;
+margin-top:5px;
+margin-bottom:10px;
+}
+
+.login{
+margin:50px 500px;
+
+}
+
+.tasks{
+color:white;
+margin-left:270px
+}
+.register{
+margin:10px 500px;
+background: rgba(0, 0, 0, 0.5);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            color:white;
+}
+
+
+
+ .login {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            color:white;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            color: #fff;
+        }
+
+        /* Input field styles */
+        input[type="text"],
+        input[type="password"] {
+            width:90% ;
+            padding: 15px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            background: #fff;
+            color: #333;
+            font-size: 1.1em;
+        }
+
+        /* Button styles */
+        button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            background: #1a001a;
+            color: white;
+            font-size: 1.2em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #ffccff;
+            color:#330033;
+        }
+
+        /* Error message styling */
+        .error-message {
+            color: #ff4d4d;
+            margin-bottom: 20px;
+        }
+
+        /* Responsive design */
+        @media (max-width: 600px) {
+            .login {
+                padding: 20px;
+            }
+        }
+
+  .body2 {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 700px;
+            text-align: center;
+        }
+
+        /* Header */
+        h1 {
+            color: white;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        /* Form layout and design */
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
+        }
+
+        label {
+            font-size: 1.1em;
+            margin-bottom: 8px;
+            color: white;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 90%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        /* Resize the textarea */
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+
+
+
+
+        /* Link styling */
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-size: 1em;
+            margin-top: 20px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Error message styling (optional) */
+        .error {
+            color: red;
+            margin-bottom: 10px;
+        }
+
+
+        /* Styling for the welcome section */
+       /* Styling for the welcome section */
+       .wlcm {
+           height:500px;
+            /* Green background */
+           color: white; /* White text color */
+           text-align: center; /* Center-align the text */
+           padding: 20px; /* Add padding inside the div */
+           border-radius: 8px; /* Rounded corners */
+            /* Subtle shadow for depth */
+           margin: 10px auto; /* Center the div with margin */
+           width: 70%; /* Set width to 80% of the container */
+           font-family: 'Arial', sans-serif; /* Font family */
+           overflow: hidden; /* Hide overflowing content */
+           position: relative; /* Required for positioning child elements */
+
+       }
+
+       /* Style for the heading inside the .wlcm */
+       .wlcm h3 {
+
+           font-size: 35px; /* Increase the font size */
+           font-weight: bold; /* Make the text bold */
+           margin: 240px; /* Remove any margin around the h3 */
+           letter-spacing: 1px; /* Add letter spacing for a cleaner look */
+           white-space: nowrap; /* Prevent text from breaking into new lines */
+           animation: moveLetters 10s linear infinite; /* Animation effect */
+            /* Make text absolute within the parent */
+       }
+
+       /* Animation to move the text from left to right within the container */
+       @keyframes moveLetters {
+           0% {
+               transform: translateX(100%); /* Start off-screen to the right */
+           }
+           50% {
+               transform: translateX(0); /* Move to the center */
+           }
+           100% {
+               transform: translateX(-100%); /* Move off-screen to the left */
+           }
+       }
+
+
+/* Container for all tasks */
+.task-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between task cards */
+}
+
+/* Each individual task card */
+.task-card {
+    display: flex;
+    justify-content: space-between; /* Space between title, description, and the edit button */
+    align-items: center; /* Vertically align content */
+    background-color: #800080;
+    background:rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Task info (Title + Description) */
+.task-info {
+    display: flex;
+    align-items: center; /* Vertically align title and description */
+    gap: 20px; /* Space between title and description */
+    flex-grow: 1; /* Allow task-info to take up available space */
+}
+
+.task-info h4 {
+   color: #ffccff;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.task-info p {
+    font-size: 14px;
+    color:white;
+    margin: 0;
+}
+
+/* Task actions (Edit button) */
+.task-actions {
+    display: flex;
+    justify-content: flex-end; /* Align the edit button to the right */
+    margin-left: 20px; /* Add some space between task info and edit button */
+
+    gap:5px;
+}
+.task-actions a{
+
+margin-top:10px;
+text-decoration:none;
+color:blue;
+}
+.task-actions b{
+
+margin-top:10px;
+text-decoration:none;
+color:blue;
+}
+
+
+.tasks h1{
+
+color:#1a001a;
+
+}
+
+.admin{
+
+margin-left:300px;
+width:500px;
+}
+
+.container{
+margin-left:600px;
+
+background: rgba(0, 0, 0, 0.5);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            color:white;
+
+}
+.container div {
+margin-bottom:5px;
+width:100%
+}
+
+
+/* Style the container */
+/* Style for the admin container */
+.admin {
+    padding: 20px;
+    background-color: #330033;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    margin: auto;
+}
+
+/* Label styling */
+.admin label {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 10px;
+    display: block;
+    text-align:center;
+}
+
+/* Styling for the users container */
+#users {
+    margin-top: 10px;
+}
+
+/* Styling for individual user rows */
+#users div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 8px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Style for the hidden input (not visible, but present) */
+input[type="hidden"] {
+    display: none;
+}
+
+/* Styling for user name text */
+#users div th\\:text {
+    font-size: 1em;
+    color: #555;
+    font-weight: normal;
+}
+
+/* Hover effect on user rows */
+#users div:hover {
+    background-color: #f0f8ff;
+    cursor: pointer;
+}
+
+#users a{
+text-decoration:none;
+color:blue;
+}
+
+/* Profile container */
+.profile {
+    width: 70%;
+    margin-left:300px;
+    padding: 40px;
+    background-color: #330033;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading styles */
+.h1 {
+    text-align: center;
+    color: white;
+    font-size: 2em;
+}
+
+/* User name and details styling */
+.name {
+    margin-top: 20px;
+}
+
+.name h2 {
+    color: white;;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.name p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin: 5px 0;
+}
+
+.name strong {
+    color: white;
+}
+
+/* Task list styling */
+
+
+.list {
+
+    padding: 0;
+    margin-top: 10px;
+    color:white;
+}
+
+.assign{
+color:blue;
+text-align:center;
+}
+
+.btn {
+    display: flex; /* Flexbox ko use karke items ko row mein align karein */
+    justify-content: space-between; /* Buttons ke beech mein space rakhein */
+    gap: 10px; /* Dono buttons ke beech mein gap */
+    width: 100%; /* Full width le */
+}
+
+.btn .edit-btn {
+margin-top:0px;
+margin-left:5px;
+    flex: 1; /* Dono buttons ko equal size dega */
+    text-align: center; /* Button text ko center mein align karega */
+    padding: 10px; /* Button ka padding */
+    border: 1px solid #ccc; /* Border (optional) */
+    background-color: #f4f4f4; /* Button ka background color (optional) */
+    color: #333; /* Text color */
+    font-size:14px;
+     border-radius: 5px;
+    text-decoration: none; /* Link ke underline ko hata dega */
+    display: block; /* Link ko block level element bana dega */
+ transition: background-color 0.3s;
+}
+
+.edit-btn:hover {
+color:#330033;
+    background-color: #ffccff;
+}
+
+.btn form {
+    margin: 0; /* Form ke margin ko 0 kar dein */
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Tasks</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header>
+    <div class="header">
+        <h1>Cloud Task Management</h1>
+    </div>
+</header>
+
+<div>
+
+    <div class="body">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li th:if="${session.id != null}"><a href="/task">Assigned Task</a></li>
+            <li th:if="${session.id == null}"><a href="/register">Register</a></li>
+            <li th:if="${session.id != null && session.role == 'ADMIN'}"><a href="/create">Create New Task</a></li>
+            <li th:if="${session.id != null && session.role == 'ADMIN'}"><a href="/admin">Users</a></li>
+            <li th:if="${session.role =='ADMIN'}"><a href="/tasks/assign">Assign task to User</a></li>
+            <li th:if="${session.id == null}"><a href="/login">Login</a></li>
+            <li th:if="${session.id != null}"><a href="/logout">Logout</a></li>
+        </ul>
+    </div>
+
+<div class="tasks">
+
+    <!-- Check if there are any tasks -->
+    <div th:if="${tasks.isEmpty() && session.role == 'USER'}">
+        <h1>Your Tasks</h1>
+        <p>You have no assigned tasks at the moment.</p>
+    </div>
+
+
+
+    <!-- Display tasks if available -->
+    <div th:unless="${tasks.isEmpty()}">
+        <div class="task-container">
+            <!-- Iterate over tasks and display them -->
+            <div th:each="task : ${tasks}" class="task-card">
+                <div class="task-info">
+                    <h4 th:text="${task.title}"></h4>
+                    <p th:text="${task.description}"></p>
+                </div>
+                <div class="task-actions">
+                    <p th:text="${task.dueDate}"></p>
+                    <b th:if="${session.role =='USER'}" th:text="${task.adminName}"></b>
+                    <div class="btn">
+
+                        <a th:href="@{/task/update/{id}(id=${task.id})}" class="edit-btn">Edit</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div th:if="${session.role=='ADMIN'}">
+
+
+        <div th:unless="${alltask.isEmpty()}" >
+            <div class="task-container">
+                <!-- Iterate over tasks and display them -->
+                <div th:each="task : ${alltask}" class="task-card">
+                    <div class="task-info">
+                        <h4 th:text="${task.title}"></h4>
+                        <p th:text="${task.description}"></p>
+                    </div>
+                    <div class="response" th:each="task : ${alltask}" >
+                        <div th:if="${session.role == 'ADMIN' && task.userResponse != null}"  id="responseUser" th:text="${task.userResponse}">No response</div>
+
+                        <div th:if="${session.role == 'USER' && task.adminResponse != null}" id="responseAdmin" th:text="${task.adminResponse}">No response</div>
+                    </div>
+                    <div class="task-actions">
+                        <p th:text="${task.dueDate}"></p>
+                        <a th:href="@{/profile/{id}(id=${task.user.id})}" th:text="${task.user.username}"></a>
+
+                       <div class="btn">
+
+                           <a th:href="@{/task/update/{id}(id=${task.id})}" class="edit-btn">Edit</a>
+                           <form th:action="@{/task/delete/{id}(id=${task.id})}" method="post" style="display:inline;">
+                               <button type="submit" class="edit-btn">Delete</button>
+                           </form>
+                       </div>
+
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+    </div>
+    </div>
+
+
+
+    <br>
+
+
+</div>
+
+</div>
+</body>
+</html>

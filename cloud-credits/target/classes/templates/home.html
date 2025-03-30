@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link href="/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+<header>
+    <div class="header">
+       <h1>Cloud Task Management</h1>
+    </div>
+</header>
+
+<div class="body">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li th:if="${session.id != null}"><a href="/task">Assigned Task</a></li>
+        <li th:if="${session.id == null}"><a href="/register">Register</a></li>
+        <li th:if="${session.id != null && session.role == 'ADMIN'}"><a href="/create">Create New Task</a></li>
+        <li th:if="${session.id != null && session.role == 'ADMIN'}"><a href="/admin">Users</a></li>
+        <li th:if="${session.role =='ADMIN'}"><a href="/tasks/assign">Assign task to User</a></li>
+        <li th:if="${session.id == null}"><a href="/login">Login</a></li>
+        <li th:if="${session.id != null}"><a href="/logout">Logout</a></li>
+    </ul>
+</div>
+<div class="wlcm">
+    <h3>Welcome to Cloud Task management</h3>
+</div>
+<div>
+
+
+</div>
+
+
+
+</body>
+</html>
