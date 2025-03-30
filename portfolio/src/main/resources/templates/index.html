@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous"></head>
+
+<body class="body">
+<header class="mb-5">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <a class="navbar-brand" href="/">Portfolio</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#skill">Skills</a>
+                </li><li class="nav-item">
+                    <a class="nav-link" href="#project">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact Us</a>
+                </li>
+
+
+
+
+            </ul>
+
+        </div>
+    </nav>
+</header>
+
+
+<div class="container homepage  p-5">
+    <div class="row">
+        <div class="col-md-8">
+            <p>Hello , Welcome</p>
+
+
+            <h2 >I'm <i>Adarsh Maurya</i></h2>
+
+            <h5> Java Developer student </h5>
+
+            <br/>
+
+            <h3><i>My Resume</i></h3>
+
+            <a href="/adu.pdf" download="adarshmaurya.pdf">
+                <button>Download Resume</button>
+            </a>
+
+
+
+
+        </div>
+        <div class="col-md-4">
+            <img class="profile" th:src="@{/image/adarsh.jpg}" alt="My Image"/>
+        </div>
+
+    </div>
+</div>
+<section id="about">
+
+    <div class="container about p-5">
+        <div class="row">
+
+            <div class="col-md-4">
+                <img class="profile" th:src="@{/image/adarsh.jpg}" alt="My Image"/>
+            </div>
+            <div class="col-md-8 p-5">
+                <h3>About</h3>
+                Hello! I'm <b>Adarsh Maurya</b>, a passionate Java Developer student currently pursuing my Diploma in Computer Science at <b>MJPGP Kausambi</b>. I am always eager to learn and grow in the field of software development. My focus is primarily on Java programming and building web applications with modern frameworks like <b><i>Spring Boot</i></b>.
+                <p class="mt-2">I specialize in Java, and I have hands-on experience with various frameworks such as Spring Boot, Hibernate, and JSP. I am also proficient in working with relational databases like MySQL , and have worked with tools like Maven.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="skill">
+
+    <div class="container about p-5">
+        <div class="row">
+
+            <div id="skills" class="container my-5">
+                <h2>My Skills</h2>
+                <div class="row">
+                    <!-- Programming Languages -->
+                    <div class="col-md-4">
+                        <h4>Programming Languages</h4>
+                        <ul>
+                            <li>Java</li>
+                            <li>Python</li>
+                            <li>JavaScript</li>
+                            <li>C++</li>
+                        </ul>
+                    </div>
+
+                    <!-- Web Development -->
+                    <div class="col-md-4">
+                        <h4>Web Development</h4>
+                        <ul>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                            <li>React</li>
+                            <li>Bootstrap</li>
+                        </ul>
+                    </div>
+
+                    <!-- Backend Technologies -->
+                    <div class="col-md-4">
+                        <h4>Backend Technologies</h4>
+                        <ul>
+                            <li>Spring Boot</li>
+                            <li>Hibernate/Orm</li>
+                            <li>Django</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row mt-5">
+                    <!-- Database -->
+                    <div class="col-md-4">
+                        <h4>Databases</h4>
+                        <ul>
+                            <li>MySQL</li>
+
+                        </ul>
+                    </div>
+
+                    <!-- Tools -->
+                    <div class="col-md-4">
+                        <h4>Tools</h4>
+                        <ul>
+                            <li>Git</li>
+                            <li>Visual Studio Code</li>
+                            <li>IntelliJ IDEA</li>
+
+                        </ul>
+                    </div>
+
+                    <!-- Soft Skills -->
+                    <div class="col-md-4">
+                        <h4>Soft Skills</h4>
+                        <ul>
+                            <li>Effective Communication</li>
+                            <li>Problem-Solving</li>
+                            <li>Time Management</li>
+                            <li>Teamwork</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-- <div class="col-md-4">
+                 <img class="profile" th:src="@{/image/adarsh.jpg}" alt="My Image"/>
+
+             </div>-->
+
+        </div>
+
+    </div>
+</section>
+
+<section id="project">
+<div class="container p-5">
+    <h2>Projects</h2>
+    <table border="1" >
+        <thead>
+        <tr>
+
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+        <tbody >
+        <!-- Iterate over the 'projects' list -->
+        <tr class="p-3" th:each="project : ${projects}">
+            <td th:text="${project.name}"></td>
+            <td th:text="${project.description}"></td>
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+</section>
+
+
+<footer class="text-center py-3 footer">
+    <section id="contact">
+
+        <div class="container contact p-5">
+
+            <h3>Contact us</h3>
+            <ul class="list-unstyled">
+                <li>LinkedIn: <a href="https://www.linkedin.com/in/adarsh-maurya-ab99822ba?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="text-success" target="_blank">LinkedIn Profile</a></li>
+                <li>GitHub: <a href="https://github.com/your-profile" class="text-success" target="_blank">GitHub Profile</a></li>
+                <li>Instagram: <a href="https://www.instagram.com/adarshmauryahoon?igsh=Y3prOHoweDgyNnJ4" class="text-success" target="_blank">Instagram</a></li>
+                <li>WhatsApp: <a href="https://wa.me/7521855267" class="text-success" target="_blank">Contact me on WhatsApp</a></li>
+            </ul>
+        </div>
+    </section>
+    <p>&copy; 2025 Adarsh. All rights reserved.</p>
+
+</footer>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+</html>
